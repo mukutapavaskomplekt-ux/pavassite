@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інструмент - Паваскомплект Івано-Франківськ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .page-header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem 0;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #2980b9;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Паваскомплект Івано-Франківськ</div>
+                <nav>
+                    <ul>
+                        <li><a href="company-website.html">Головна</a></li>
+                        <li><a href="company-website.html#services">Товар</a></li>
+                        <li><a href="company-website.html#about">Про нас</a></li>
+                        <li><a href="company-website.html#contact">Контакти</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Інструмент</h1>
+                <p>Професійний інструмент для ремонту та обслуговування техніки</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <a href="company-website.html" class="back-button">← Повернутися на головну</a>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>Ключі гайкові</h3>
+                    <p>Набори гайкових ключів різних розмірів. Ріжкові, накидні та комбіновані ключі високої якості.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Головки торцеві</h3>
+                    <p>Торцеві головки та тріщатки для професійного використання. Різні розміри та профілі.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Викрутки</h3>
+                    <p>Набори викруток з різними типами наконечників. Хрестові, плоскі, зіркоподібні та спеціальні.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Плоскогубці та кусачки</h3>
+                    <p>Професійні плоскогубці, круглогубці, кусачки та спеціальний інструмент для електрики.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Молотки та кувалди</h3>
+                    <p>Слюсарні молотки, кувалди та спеціальні молотки для різних видів робіт.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Напилки та пилки</h3>
+                    <p>Ручні напилки, ножівки по металу та дереву. Різні профілі та розміри зубців.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Свердла та фрези</h3>
+                    <p>Свердла по металу, дереву та бетону. Фрези для фрезерних робіт різних діаметрів.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Мірний інструмент</h3>
+                    <p>Лінійки, рулетки, штангенциркулі та мікрометри для точних вимірювань.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Струбцини та лещата</h3>
+                    <p>Слюсарні лещата, струбцини різних розмірів для фіксації деталей під час обробки.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Електроінструмент</h3>
+                    <p>Дрилі, болгарки, шуруповерти та інший електричний інструмент для професійного використання.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Пневмоінструмент</h3>
+                    <p>Пневматичні гайковерти, дрилі та шліфмашини для автосервісів та промисловості.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Гідравлічний інструмент</h3>
+                    <p>Гідравлічні домкрати, прес-кліщі та інструмент для роботи з високими зусиллями.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Автомобільний інструмент</h3>
+                    <p>Спеціалізований інструмент для ремонту автомобілів. Знімачі, оправки та спеціальні ключі.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Діагностичне обладнання</h3>
+                    <p>Мультиметри, осцилографи та діагностичні сканери для електронних систем.</p>
+                </div>
+                
+                <div class="product-card">
+                    <h3>Ящики та органайзери</h3>
+                    <p>Інструментальні ящики, валізи та органайзери для зберігання та транспортування інструменту.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Паваскомплект Івано-Франківськ. Всі права захищені.</p>
+        </div>
+    </footer>
+</body>
+</html>

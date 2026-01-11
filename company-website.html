@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="kjuj2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="kjuj2.png">
+    <link rel="shortcut icon" href="kjuj2.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="kjuj2.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="kjuj2.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="kjuj2.png">
+    <title>Паваскомплект</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #85c1e9 0%, #5dade2 100%);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ecf0f1;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('45480424_566758383770339_4359867889679859712_n.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(10px);
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+
+
+        .company-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-out 0.5s forwards;
+        }
+
+        .company-tagline {
+            font-size: 1.1rem;
+            opacity: 0;
+            margin-bottom: 1rem;
+            font-style: italic;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out 1s forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out 1.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #2980b9;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(41, 128, 185, 0.3);
+        }
+
+        .services {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .brands-section {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .brands-header {
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .brands-header:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #1f5f8b 100%);
+        }
+
+        .brands-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .brands-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s ease;
+            padding: 0 2rem;
+        }
+
+        .brands-content.active {
+            max-height: 500px;
+            padding: 2rem;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .brand-item {
+            background: #34495e;
+            color: white;
+            padding: 0.8rem;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-2px);
+            background: #2c3e50;
+        }
+
+        .dropdown-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .dropdown-arrow.rotated {
+            transform: rotate(180deg);
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .about {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            background: #ecf0f1;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Плаваюча кнопка SMS */
+        .sms-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+
+        .sms-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Модальне вікно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .modal h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .modal input, .modal textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .modal button {
+            background: #2980b9;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .close-btn {
+            background: #95a5a6 !important;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .company-info h1 {
+                font-size: 1.8rem;
+            }
+
+            .company-logo {
+                width: 100px;
+                height: 100px;
+            }
+
+
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                margin-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="company-website.html" class="logo">
+                    <img src="лого1.png" alt="Лого">
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Головна</a></li>
+                        <li><a href="#services">Товар</a></li>
+                        <li><a href="#about">Про нас</a></li>
+                        <li><a href="#contact">Контакти</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="company-info">
+                        <h1>Паваскомплект Івано-Франківськ</h1>
+                        <div class="company-tagline">Професійні технічні рішення</div>
+                        <p>Ваш надійний партнер у світі технічних рішень</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Наш товар</h2>
+                
+                <!-- Секція брендів -->
+                <div class="brands-section">
+                    <div class="brands-header" onclick="toggleBrands()">
+                        <h3>Співпраця з відомими брендами</h3>
+                        <span class="dropdown-arrow" id="brandsArrow">▼</span>
+                    </div>
+                    <div class="brands-content" id="brandsContent">
+                        <div class="brands-grid">
+                            <div class="brand-item">SKF</div>
+                            <div class="brand-item">FAG</div>
+                            <div class="brand-item">NSK</div>
+                            <div class="brand-item">Timken</div>
+                            <div class="brand-item">NTN</div>
+                            <div class="brand-item">INA</div>
+                            <div class="brand-item">Koyo</div>
+                            <div class="brand-item">SNR</div>
+                            <div class="brand-item">Gates</div>
+                            <div class="brand-item">Dayco</div>
+                            <div class="brand-item">Contitech</div>
+                            <div class="brand-item">Bosch</div>
+                            <div class="brand-item">Castrol</div>
+                            <div class="brand-item">Mobil 1</div>
+                            <div class="brand-item">Shell</div>
+                            <div class="brand-item">Total</div>
+                            <div class="brand-item">Liqui Moly</div>
+                            <div class="brand-item">Motul</div>
+                            <div class="brand-item">Valvoline</div>
+                            <div class="brand-item">Elf</div>
+                            <div class="brand-item">Mann Filter</div>
+                            <div class="brand-item">Mahle</div>
+                            <div class="brand-item">Febi</div>
+                            <div class="brand-item">Lemforder</div>
+                            <div class="brand-item">Sachs</div>
+                            <div class="brand-item">Monroe</div>
+                            <div class="brand-item">Bilstein</div>
+                            <div class="brand-item">Brembo</div>
+                            <div class="brand-item">ATE</div>
+                            <div class="brand-item">TRW</div>
+                            <div class="brand-item">Valeo</div>
+                            <div class="brand-item">Hella</div>
+                            <div class="brand-item">Osram</div>
+                            <div class="brand-item">NGK</div>
+                            <div class="brand-item">Denso</div>
+                            <div class="brand-item">Continental</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card" onclick="window.location.href='bearings.html'">
+                        <div class="service-icon">⚙️</div>
+                        <h3>Підшипники</h3>
+                        <p>Широкий асортимент підшипників для промислового та автомобільного застосування</p>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='belts-chains.html'">
+                        <div class="service-icon">🔗</div>
+                        <h3>Паси та Ланцюги</h3>
+                        <p>Якісні приводні паси та ланцюги для різних типів обладнання</p>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='seals.html'">
+                        <div class="service-icon">🔧</div>
+                        <h3>Технічні Ущільнювачі</h3>
+                        <p>Професійні ущільнювачі для гідравлічних та пневматичних систем</p>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='tools.html'">
+                        <div class="service-icon">🛠️</div>
+                        <h3>Інструмент</h3>
+                        <p>Професійний інструмент для ремонту та обслуговування техніки</p>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='automotive-chemistry.html'">
+                        <div class="service-icon">🚗</div>
+                        <h3>Автомобільна Хімія</h3>
+                        <p>Якісна автохімія для догляду та обслуговування автомобілів</p>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='spare-parts.html'">
+                        <div class="service-icon">🚜</div>
+                        <h3>Запчастини</h3>
+                        <p>Запчастини для с/г техніки, легкових та вантажних автомобілів</p>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='retaining-rings.html'">
+                        <div class="service-icon">⭕</div>
+                        <h3>Стопорні кільця</h3>
+                        <p>Стопорні кільця для фіксації деталей у механізмах та обладнанні</p>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='polymer-materials.html'">
+                        <div class="service-icon">🧪</div>
+                        <h3>Полімерні матеріали</h3>
+                        <p>Високоякісні полімерні матеріали для промислового застосування</p>
+                    </div>
+                    <div class="service-card" onclick="window.location.href='hoses-sleeves.html'">
+                        <div class="service-icon">🔧</div>
+                        <h3>Рукава та шланги</h3>
+                        <p>Надійні рукава та шланги для гідравлічних та пневматичних систем</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div>
+                        <h2>Про нашу компанію</h2>
+                        <p>Ми - провідна компанія у сфері постачання технічних рішень для промисловості та автомобільного сектору.</p>
+                        <p>Наша місія - забезпечити наших клієнтів якісними товарами та професійним сервісом.</p>
+                        <p>Маємо багаторічний досвід роботи та широку мережу постачальників.</p>
+                    </div>
+                    <div>
+                        <h3>Наші переваги:</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 10px 0;">✓ Широкий асортимент товарів</li>
+                            <li style="margin: 10px 0;">✓ Конкурентні ціни</li>
+                            <li style="margin: 10px 0;">✓ Професійні консультації</li>
+                            <li style="margin: 10px 0;">✓ Гарантія якості</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Контактна інформація</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📞 Телефон</h3>
+                        <p>+380 50 749 2761</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p>info@technoservice.ua</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📍 Адреса</h3>
+                        <p><a href="https://www.google.com/maps/place/%D0%A2%D0%9E%D0%92+%D0%9F%D0%90%D0%92%D0%90%D0%A1%D0%9A%D0%9E%D0%9C%D0%9F%D0%9B%D0%95%D0%9A%D0%A2/@48.9386529,24.737498,17z/data=!4m14!1m7!3m6!1s0x4730c19b1a2fffff:0xe2a276e8934ab292!2z0KLQntCSINCf0JDQktCQ0KHQmtCe0JzQn9Cb0JXQmtCi!8m2!3d48.9386529!4d24.7400729!16s%2Fg%2F11clyt17k5!3m5!1s0x4730c19b1a2fffff:0xe2a276e8934ab292!8m2!3d48.9386529!4d24.7400729!16s%2Fg%2F11clyt17k5?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: #2c3e50; text-decoration: none;">вулиця Вовчинецька, 188, Івано-Франківськ, Івано-Франківська область, 76000</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕒 Режим роботи</h3>
+                        <p>Пн-Пт: 8:00-18:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Паваскомплект Івано-Франківськ. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <!-- Плаваюча кнопка SMS -->
+    <button class="sms-button" onclick="openModal()">📞 Написати</button>
+
+    <!-- Модальне вікно -->
+    <div id="smsModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <h3>Зворотний зв'язок</h3>
+            <form id="contactForm">
+                <input type="text" placeholder="Ім'я *" required>
+                <input type="tel" placeholder="Телефон *" required>
+                <textarea placeholder="Питання (по бажанню)" rows="3"></textarea>
+                <button type="submit">Надіслати</button>
+                <button type="button" class="close-btn" onclick="closeModal()">Закрити</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Функція для розкриття/закриття брендів
+        function toggleBrands() {
+            const content = document.getElementById('brandsContent');
+            const arrow = document.getElementById('brandsArrow');
+            
+            content.classList.toggle('active');
+            arrow.classList.toggle('rotated');
+        }
+
+        // Функція для розкриття/закриття підвкладки
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            const arrow = dropdown.previousElementSibling.querySelector('.dropdown-arrow');
+            
+            dropdown.classList.toggle('active');
+            arrow.classList.toggle('rotated');
+        }
+
+        // Плавна прокрутка до секцій
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Анімація появи елементів при прокрутці
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .contact-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Функції для модального вікна
+        function openModal() {
+            document.getElementById('smsModal').style.display = 'block';
+        }
+
+        function closeModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            document.getElementById('smsModal').style.display = 'none';
+        }
+
+        // Обробка форми
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = this.querySelector('input[type="text"]').value;
+            const phone = this.querySelector('input[type="tel"]').value;
+            const question = this.querySelector('textarea').value || 'Не вказано';
+            
+            // Отримуємо лічильник заявок
+            let requestCounter = localStorage.getItem('requestCounter') || 0;
+            requestCounter++;
+            localStorage.setItem('requestCounter', requestCounter);
+            
+            // Генеруємо унікальний номер
+            const requestId = String(Date.now()).slice(-6);
+            
+            const message = `📋 Заявка №${requestCounter} (ID: ${requestId})\n\n👤 Ім'я: ${name}\n📞 Телефон: ${phone}\n❓ Питання: ${question}\n\nℹ️ Для опрацювання напишіть: ✅ ${requestCounter}`;
+            
+            fetch(`https://api.telegram.org/bot8373827609:AAFYjvGA3Qy_D-UtvatX7Mx4aQDR_Siiq9E/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: '8388344045',
+                    text: message
+                })
+            })
+            .then(() => {
+                alert('Дякуємо! Ми зв\'яжемося з вами найближчим часом!');
+                closeModal();
+                this.reset();
+            })
+            .catch(() => {
+                alert('Помилка відправки. Спробуйте ще раз або зателефонуйте нам.');
+            });
+        });
+    </script>
+</body>
+</html>
